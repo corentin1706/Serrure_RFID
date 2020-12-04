@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <MFRC522.h>
 
 int led = 2;
 
