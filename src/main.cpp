@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
-int led = 6;
+int led = 2;
+
 
 void setup() {
   Serial.begin(9600);
@@ -9,9 +10,14 @@ void setup() {
 
 void loop() {
 
-  digitalWrite(led,HIGH);
-  delay(10);
-  digitalWrite(led,LOW);
-  delay(10);
+  for (int i=0;i<256;i++){
+    analogWrite(led,i);
+    Serial.println(i);
+  }
+
+  for(int i=255;i>0;i--){
+     analogWrite(led,i);
+      Serial.println(i);
+  }
   
 }
